@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\SoundSetting;
+
 class SoundSystemController extends Controller
 {
     /**
@@ -158,7 +160,54 @@ class SoundSystemController extends Controller
         }
 
         // SET EQUALIZER
+        else if ($fungsi == 'set_equalizer'){
+            $input_bass = intval($request->input('arg1'));
+            $input_treble = intval($request->input('arg2'));
+            $input_echo = intval($request->input('arg3'));
+
+            $bass = SoundSetting::where('field', '=', 'bass')->first();
+            $treble = SoundSetting::where('field', '=', 'treble')->first();
+            $echo = SoundSetting::where('field', '=', 'echo')->first();
+
+            $before_bass = $bass->value;
+            $before_treble = $treble->value;
+            $before_echo = $echo->value;
+
+            $bass->value = $input_bass;
+            $treble->value = $input_treble;
+            $echo->value = $input_echo;
+
+            $bass->save();
+            $treble->save();
+            $echo->save();
+
+            $current_bass = $bass->value;
+            $current_treble = $treble->value;
+            $current_echo = $echo->value;
+
+            return array(
+                'before_bass' => $before_bass,
+                'before_treble' => $before_treble,
+                'before_echo' => $before_echo,
+                
+                'current_bass' => $current_bass,
+                'current_treble' => $current_treble,
+                'current_echo' => $current_echo,
+            );
+        }
+
         // GET EQUALIZER
+        else if ($fungsi == 'get_equalizer'){
+            $bass_setting = SoundSetting::where('field', '=', 'bass')->first();
+            $treble_setting = SoundSetting::where('field', '=', 'treble')->first();
+            $echo_setting = SoundSetting::where('field', '=', 'echo')->first();
+
+            return array(
+                'current_bass' => $bass_setting->value,
+                'current_treble' => $treble_setting->value,
+                'current_echo' => $echo_setting->value,
+            );
+        }
 
         else {
             return array(
