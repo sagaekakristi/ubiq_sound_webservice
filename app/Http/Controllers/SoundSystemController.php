@@ -217,4 +217,49 @@ class SoundSystemController extends Controller
             );
         }
     }
+
+    public function cron_on(Request $request)
+    {
+        $key = $request->input('key');
+        if($key == 'stitch'){
+            $h_on = $request->input('h_on');
+            $m_on = $request->input('m_on');
+            $service_call = 'curl \'localhost/index?fungsi=set_volume&id_device=0&jml_arg=1&arg1=10\'';
+            $command = 'crontab -l | { cat; echo "'.$m_on.' '.$h_on.' * * * '.$service_call.'"; } | crontab -';
+            $result_on = exec($command);
+
+            $h_off = $request->input('h_off');
+            $m_off = $request->input('m_off');
+            $service_call = 'curl \'localhost/index?fungsi=set_volume&id_device=0&jml_arg=1&arg1=50\'';
+            $command = 'crontab -l | { cat; echo "'.$m_off.' '.$h_off.' * * * '.$service_call.'"; } | crontab -';
+            $result_off = exec($command);
+
+            return array(
+                'result_on' => $result_on,
+                'result_off' => $result_off,
+            );
+        }
+        else {
+            return array(
+                'message' => 'wrong key',
+            );
+        }
+    }
+
+    public function cron_reset(Request $request)
+    {
+        $key = $request->input('key');
+        if($key == 'stitch'){
+            $command = 'crontab -r';
+            $result = exec($command);
+            return array(
+                'result' => $result,
+            );
+        }
+        else {
+            return array(
+                'message' => 'wrong key',
+            );
+        }
+    }
 }
