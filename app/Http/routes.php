@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/index', 'SoundSystemController@index');
+Route::get('/index', 'MultideviceController@index');
 
-Route::get('/cron/on', 'SoundSystemController@cron_on');
-Route::get('/cron/reset', 'SoundSystemController@cron_reset');
+Route::get('/cron/on', 'MultideviceController@cron_on');
+Route::get('/cron/reset', 'MultideviceController@cron_reset');
