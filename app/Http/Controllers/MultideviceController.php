@@ -318,6 +318,6 @@ class MultideviceController extends Controller
         exec('curl "localhost/index?fungsi=set_mute&id_device='.$id_device.'&jml_arg=1&arg1='.$new_mute.'"');
         exec('curl "localhost/index?fungsi=set_equalizer&id_device='.$id_device.'&jml_arg=3&arg1='.$new_bass.'&arg2='.$new_treble.'&arg3='.$new_echo.'"');
 
-        return $this->ui();
+        return redirect()->action('MultideviceController@ui');
     }
 }
