@@ -86,19 +86,20 @@
                     <h4 class="modal-title">Speaker1</h4>
                   </div>
                   <form>
+                    <input type="hidden" name="speaker" value=1>
                     <div class="modal-body">
                       <div class="form-group">
                         <label>Set to</label>
                         <div class="form-group row">
                           <label for="example-number-input" class="col-xs-2 col-form-label">Volume</label>
                           <div class="col-xs-10">
-                            <input class="form-control" type="number" value="" min="1" max="100" id="example-number-input">
+                            <input class="form-control" name="volume" type="number" value="" min="1" max="100" id="example-number-input">
                           </div>
                         </div>
                         <div class="form-group row">
                           <label for="example-number-input" class="col-xs-2 col-form-label">Status</label>
                           <div class="col-xs-10">
-                            <select class="form-control" id="exampleSelect1">
+                            <select class="form-control" name="mute" id="exampleSelect1">
                               <option>Mute</option>
                               <option>Unmute</option>
                             </select>
@@ -107,19 +108,19 @@
                         <div class="form-group row">
                           <label for="example-number-input" class="col-xs-2 col-form-label">Bass</label>
                           <div class="col-xs-10">
-                            <input class="form-control" type="number" value="" min="1" max="100" id="example-number-input">
+                            <input class="form-control" name="bass" type="number" value="" min="1" max="100" id="example-number-input">
                           </div>
                         </div>
                         <div class="form-group row">
                           <label for="example-number-input" class="col-xs-2 col-form-label">Treble</label>
                           <div class="col-xs-10">
-                            <input class="form-control" type="number" value="" min="1" max="100" id="example-number-input">
+                            <input class="form-control" name="treble" type="number" value="" min="1" max="100" id="example-number-input">
                           </div>
                         </div>
                         <div class="form-group row">
                           <label for="example-number-input" class="col-xs-2 col-form-label">Echo</label>
                           <div class="col-xs-10">
-                            <input class="form-control" type="number" value="" min="1" max="100" id="example-number-input">
+                            <input class="form-control" name="echo" type="number" value="" min="1" max="100" id="example-number-input">
                           </div>
                         </div>
                       </div>

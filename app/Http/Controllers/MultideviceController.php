@@ -297,4 +297,27 @@ class MultideviceController extends Controller
             ->with('treble', $treble)
             ->with('echo', $echo);
     }
+
+    public function setVolumeUI(Request $request) {
+        $id_device = $request->input('speaker');
+        $new_volume = $request->input('volume');
+        $new_mute = $request->input('mute');
+        $new_bass = $request->input('bass');
+        $new_treble = $request->input('treble');
+        $new_echo = $request->input('echo');
+
+        exec('curl "localhost/index?fungsi=set_volume&id_device='.$id_device.'&jml_arg=1&arg1='.$new_volume.'"');
+
+        if($new_mute == "Mute") {
+            $new_mute = 'true';
+        }
+        else {
+            $new_mute = 'false';
+        }
+
+        exec('curl "localhost/index?fungsi=set_mute&id_device='.$id_device.'&jml_arg=1&arg1='.$new_mute.'"');
+        exec('curl "localhost/index?fungsi=set_equalizer&id_device='.$id_device.'&jml_arg=3&arg1='.$new_bass.'&arg2='.$new_treble.'&arg3='.$new_echo.'"');
+
+        return $this->ui();
+    }
 }
