@@ -17,3 +17,4 @@ Route::get('/cron/on', 'MultideviceController@cron_on');
 Route::get('/cron/reset', 'MultideviceController@cron_reset');
 
 Route::get('/', 'MultideviceController@ui');
+Route::post('/configureUI', 'MultideviceController@configureUI');
