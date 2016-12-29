@@ -87,6 +87,7 @@
                   </div>
                   <form method="post" action="/configureUI">
                     <input type="hidden" name="speaker" value=1>
+                    <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                     <div class="modal-body">
                       <div class="form-group">
                         <label>Set to</label>
