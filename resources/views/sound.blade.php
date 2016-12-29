@@ -411,7 +411,7 @@
         <div class="col-md-3 offset-md-3">
           <div class="card card-block text-xs-center">
             <h4 class="card-title">Speaker6</h4>
-            <p class="card-text">Volume: <?php echo $volume[5];?> | Status: <?php echo $volume[5];?><br>
+            <p class="card-text">Volume: <?php echo $volume[5];?> | Status: <?php echo $mute[5];?><br>
             Bass: <?php echo $bass[5];?> | Treble: <?php echo $treble[5];?> | Echo: <?php echo $echo[5];?></p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm6">Configure</button>
             <div class="modal fade bd-example-modal-sm6" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
