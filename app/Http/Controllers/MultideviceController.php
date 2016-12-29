@@ -266,4 +266,14 @@ class MultideviceController extends Controller
             );
         }
     }
+
+    public function ui(Request $request) {
+        $volume = arrray();
+
+        for($i = 1; $i <= 7; $i++) {
+            $volume[$i-1] = exec('curl "localhost:8000/index?fungsi=get_volume&id_device='.$i.'&jml_arg=0"');
+        }
+        return view('sound')
+            ->with('volume', $volume);
+    }
 }
