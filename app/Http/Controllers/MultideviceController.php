@@ -298,7 +298,7 @@ class MultideviceController extends Controller
             ->with('echo', $echo);
     }
 
-    public function setVolumeUI(Request $request) {
+    public function configureUI(Request $request) {
         $id_device = $request->input('speaker');
         $new_volume = $request->input('volume');
         $new_mute = $request->input('mute');

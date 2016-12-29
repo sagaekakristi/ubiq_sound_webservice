@@ -85,7 +85,7 @@
                     </button>
                     <h4 class="modal-title">Speaker1</h4>
                   </div>
-                  <form>
+                  <form method="post" action="{{ action('MultideviceController@configureUI') }}">
                     <input type="hidden" name="speaker" value=1>
                     <div class="modal-body">
                       <div class="form-group">
