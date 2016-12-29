@@ -73,8 +73,8 @@
         <div class="col-md-4">
           <div class="card card-block text-xs-center">
             <h4 class="card-title">Speaker1</h4>
-            <p class="card-text">Volume: <?php echo $volume[0];?>| Status:<br>
-            Bass: | Treble: | Echo:</p>
+            <p class="card-text">Volume: <?php echo $volume[0];?> | Status : <?php echo $mute[0];?><br>
+            Bass: <?php echo $bass[0];?> | Treble: <?php echo $treble[0];?> | Echo: <?php echo $echo[0];?></p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm1">Configure</button>
             <div class="modal fade bd-example-modal-sm1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -137,8 +137,8 @@
         <div class="col-md-4">
           <div class="card card-block text-xs-center">
             <h4 class="card-title">Speaker2</h4>
-            <p class="card-text">Volume: <?php echo $volume[1];?>| Status:<br>
-            Bass: | Treble: | Echo:</p>
+            <p class="card-text">Volume: <?php echo $volume[1];?> | Status: <?php echo $mute[1];?><br>
+            Bass: <?php echo $bass[1];?> | Treble: <?php echo $treble[1];?> | Echo: <?php echo $echo[1];?></p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm2">Configure</button>
             <div class="modal fade bd-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -202,8 +202,8 @@
         <div class="col-md-4">
           <div class="card card-block text-xs-center">
             <h4 class="card-title">Speaker3</h4>
-            <p class="card-text">Volume: <?php echo $volume[2];?>| Status:<br>
-            Bass: | Treble: | Echo:</p>
+            <p class="card-text">Volume: <?php echo $volume[2];?> | Status: <?php echo $mute[2];?><br>
+            Bass: <?php echo $bass[2];?> | Treble: <?php echo $treble[2];?> | Echo: <?php echo $echo[2];?></p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm3">Configure</button>
             <div class="modal fade bd-example-modal-sm3" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -269,8 +269,8 @@
         <div class="col-md-3">
           <div class="card card-block text-xs-center">
             <h4 class="card-title">Speaker4</h4>
-            <p class="card-text">Volume: <?php echo $volume[3];?>| Status:<br>
-            Bass: | Treble: | Echo:</p>
+            <p class="card-text">Volume: <?php echo $volume[3];?> | Status: <?php echo $mute[3];?><br>
+            Bass: <?php echo $bass[3];?> | Treble: <?php echo $treble[3];?> | Echo: <?php echo $echo[3];?></p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm4">Configure</button>
             <div class="modal fade bd-example-modal-sm4" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -344,8 +344,8 @@
         <div class="col-md-3 offset-md-2">
           <div class="card card-block text-xs-center">
             <h4 class="card-title">Speaker5</h4>
-            <p class="card-text">Volume: <?php echo $volume[4];?>| Status:<br>
-            Bass: | Treble: | Echo:</p>
+            <p class="card-text">Volume: <?php echo $volume[4];?> | Status: <?php echo $mute[4];?><br>
+            Bass: <?php echo $bass[4];?> | Treble: <?php echo $treble[4];?> | Echo: <?php echo $echo[4];?></p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm5">Configure</button>
             <div class="modal fade bd-example-modal-sm5" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -411,8 +411,8 @@
         <div class="col-md-3 offset-md-3">
           <div class="card card-block text-xs-center">
             <h4 class="card-title">Speaker6</h4>
-            <p class="card-text">Volume: <?php echo $volume[5];?>| Status:<br>
-            Bass: | Treble: | Echo:</p>
+            <p class="card-text">Volume: <?php echo $volume[5];?> | Status: <?php echo $volume[5];?><br>
+            Bass: <?php echo $bass[5];?> | Treble: <?php echo $treble[5];?> | Echo: <?php echo $echo[5];?></p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm6">Configure</button>
             <div class="modal fade bd-example-modal-sm6" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -475,8 +475,8 @@
         <div class="col-md-3">
           <div class="card card-block text-xs-center">
             <h4 class="card-title">Speaker7</h4>
-            <p class="card-text">Volume: <?php echo $volume[6];?>| Status:<br>
-            Bass: | Treble: | Echo:</p>
+            <p class="card-text">Volume: <?php echo $volume[6];?> | Status: <?php echo $mute[6];?><br>
+            Bass: <?php echo $bass[6];?> | Treble: <?php echo $treble[6];?> | Echo: <?php echo $echo[6];?></p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm7">Configure</button>
             <div class="modal fade bd-example-modal-sm7" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">

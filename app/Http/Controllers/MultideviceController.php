@@ -268,12 +268,33 @@ class MultideviceController extends Controller
     }
 
     public function ui(Request $request) {
-        $volume = arrray();
+        $volume = array();
+        $mute = array();
+        $bass = array();
+        $treble = array();
+        $echo = array();
 
         for($i = 1; $i <= 7; $i++) {
-            $volume[$i-1] = exec('curl "localhost:8000/index?fungsi=get_volume&id_device='.$i.'&jml_arg=0"');
+            $responseVolume = json_decode(exec('curl "localhost/index?fungsi=get_volume&id_device='.$i.'&jml_arg=0"'), true);
+            $responseMute = json_decode(exec('curl "localhost/index?fungsi=get_mute&id_device='.$i.'&jml_arg=0"'), true);
+            $responseEqualizer = json_decode(exec('curl "localhost/index?fungsi=get_equalizer&id_device='.$i.'&jml_arg=0"'), true);
+            $volume[$i-1] = $responseVolume['data']['current_volume'];
+            if($responseMute['data']['current_mute']) {
+                $mute[$i-1] = "Mute";   
+            }
+            else {
+                $mute[$i-1] = "Not Mute";
+            }
+            $bass[$i-1] = $responseEqualizer['data']['current_bass'];
+            $treble[$i-1] = $responseEqualizer['data']['current_treble'];
+            $echo[$i-1] = $responseEqualizer['data']['current_echo'];
         }
+
         return view('sound')
-            ->with('volume', $volume);
+            ->with('volume', $volume)
+            ->with('mute', $mute)
+            ->with('bass', $bass)
+            ->with('treble', $treble)
+            ->with('echo', $echo);
     }
 }
