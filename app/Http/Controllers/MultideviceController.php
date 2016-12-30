@@ -65,6 +65,11 @@ class MultideviceController extends Controller
                 ->first();
             $new_value = $new_data->value;
 
+            $scale = VolumeScale::where('id_device', '=', $id_device)
+                ->first()->value;
+
+            $new_value = $new_value * $scale;
+
             // return
             return array(
                 'status' => true,
