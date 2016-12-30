@@ -563,7 +563,7 @@
         window.location = "/microphoneUI?scale=0.5&checked=1";
       }
       else {
-        window.location = "/microphoneUI?scale=1&checked=0";
+        window.location = "/microphoneUI?scale=2&checked=0";
       }
     }
     </script>
