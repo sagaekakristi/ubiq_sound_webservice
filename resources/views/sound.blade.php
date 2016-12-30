@@ -344,7 +344,7 @@
             <p>Status:</p>
             <!-- Rounded switch -->
             <label class="switch">
-              <input type="checkbox" onchange="microphone(this) <?php if($checked == 1) {echo "checked";}?>"> 
+              <input type="checkbox" onchange="microphone(this)" <?php if($checked == 1) {echo "checked";}?>> 
               <div class="slider round"></div>
             </label></p>
           </div>
