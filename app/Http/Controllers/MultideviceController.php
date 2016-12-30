@@ -218,7 +218,7 @@ class MultideviceController extends Controller
     	for($i = 1; $i <= 7; $i++) {
 	        $old_scale_data = VolumeScale::where('id_device', '=', $i)
 	            ->first();
-	        $old_scale_data->value = $new_scale;
+	        $old_scale_data->value = $old_scale_data->value * $new_scale;
 	        $old_scale_data->save();
 	}
 
@@ -353,7 +353,7 @@ class MultideviceController extends Controller
             for($i = 1; $i <= 7; $i++) {
                 $old_scale_data = VolumeScale::where('id_device', '=', $i)
                     ->first();
-                $old_scale_data->value = $old_scale_data * $new_scale;
+                $old_scale_data->value = $old_scale_data->value * $new_scale;
                 $old_scale_data->save();
             }
 
