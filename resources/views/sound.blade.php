@@ -139,7 +139,7 @@
         <div class="col-md-4">
           <div class="card card-block text-xs-center">
             <h4 class="card-title">Speaker2</h4>
-            <p class="card-text">Volume: <?php echo $volume[1];?> | <?php if($mute[1] == "Mute"){echo '<div style="color:red">'}else{echo '<div style="color:green">'} echo $mute[1].'</div>';?><br>
+            <p class="card-text">Volume: <?php echo $volume[1];?> | <?php if($mute[1] == "Mute"){echo '<div style="color:red">';}else{echo '<div style="color:green">';} echo $mute[1].'</div>';?><br>
             Bass: <?php echo $bass[1];?> | Treble: <?php echo $treble[1];?> | Echo: <?php echo $echo[1];?></p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm2">Configure</button>
             <div class="modal fade bd-example-modal-sm2" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
