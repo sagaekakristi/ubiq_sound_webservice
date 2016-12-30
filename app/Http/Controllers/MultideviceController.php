@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 use App\Multidevice;
 use App\VolumeScale;
+use App\Microphone;
 
 class MultideviceController extends Controller
 {
@@ -291,12 +292,15 @@ class MultideviceController extends Controller
             $echo[$i-1] = $responseEqualizer['data']['current_echo'];
         }
 
+        $checked = Microphone::where('id', '=', 1)->first()->value;
+
         return view('sound')
             ->with('volume', $volume)
             ->with('mute', $mute)
             ->with('bass', $bass)
             ->with('treble', $treble)
-            ->with('echo', $echo);
+            ->with('echo', $echo)
+            ->with('checked', $checked);
     }
 
     public function configureUI(Request $request) {
@@ -324,13 +328,18 @@ class MultideviceController extends Controller
 
     public function microphoneUI(Request $request) {
             $new_scale = $request->input('scale');
+            $new_checkbox = $request->input('checked');
 
             for($i = 1; $i <= 7; $i++) {
-                $old_data = VolumeScale::where('id_device', '=', $i)
+                $old_scale_data = VolumeScale::where('id_device', '=', $i)
                     ->first();
-                $old_data->value = $new_scale;
-                $old_data->save();
+                $old_scale_data->value = $new_scale;
+                $old_scale_data->save();
             }
+
+            $old_checked_data = Microphone::where('id', '=', 1)->first();
+            $old_checked_data->value = $new_checkbox;
+            $old_checked_data->save();
 
             return redirect()->action('MultideviceController@ui');
     }

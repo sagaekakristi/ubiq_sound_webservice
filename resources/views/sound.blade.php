@@ -344,7 +344,7 @@
             <p>Status:</p>
             <!-- Rounded switch -->
             <label class="switch">
-              <input type="checkbox" onchange="microphone(this)"> 
+              <input type="checkbox" onchange="microphone(this) <?php if($checked == 1) {echo "checked";}?>"> 
               <div class="slider round"></div>
             </label></p>
           </div>
@@ -560,10 +560,10 @@
     <script>
     function microphone(element) {
       if(element.checked) {
-        window.location = "/microphoneUI?scale=0.5";
+        window.location = "/microphoneUI?scale=0.5&checked=1";
       }
       else {
-        window.location = "/microphoneUI?scale=1";
+        window.location = "/microphoneUI?scale=1&checked=0";
       }
     }
     </script>
