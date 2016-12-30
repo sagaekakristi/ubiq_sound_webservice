@@ -350,11 +350,23 @@ class MultideviceController extends Controller
             $new_scale = $request->input('scale');
             $new_checkbox = $request->input('checked');
 
-            for($i = 1; $i <= 7; $i++) {
-                $old_scale_data = VolumeScale::where('id_device', '=', $i)
-                    ->first();
-                $old_scale_data->value = $old_scale_data->value * $new_scale;
-                $old_scale_data->save();
+            // for($i = 1; $i <= 7; $i++) {
+            //     $old_scale_data = VolumeScale::where('id_device', '=', $i)
+            //         ->first();
+            //     $old_scale_data->value = $old_scale_data->value * $new_scale;
+            //     $old_scale_data->save();
+            // }
+
+            $responseVolume = json_decode(exec('curl "10.10.100.202/index?fungsi=get_volume"'), true);
+            $oldVolume = intval($responseVolume['data']['volume']);
+
+            if($new_scale == 2) {
+            	$newVolume = $oldVolume / 2;
+            	$result = exec('curl "10.10.100.202/index?fungsi=set_volume='.$newVolume.'"');
+            }
+            else {
+            	$newVolume = $oldVolume * 2;
+            	$result = exec('curl "10.10.100.202/index?fungsi=set_volume='.$newVolume.'"');
             }
 
             $old_checked_data = Microphone::where('id', '=', 1)->first();
