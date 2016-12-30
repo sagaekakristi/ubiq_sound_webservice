@@ -72,7 +72,7 @@
       <div class="row">
         <div class="col-md-4">
           <div class="card card-block text-xs-center">
-            <h4 class="card-title">Speaker1</h4>
+            <h4 id="demo" class="card-title">Speaker1</h4>
             <p class="card-text">Volume: <?php echo $volume[0];?> | Status : <?php echo $mute[0];?><br>
             Bass: <?php echo $bass[0];?> | Treble: <?php echo $treble[0];?> | Echo: <?php echo $echo[0];?></p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm1">Configure</button>
@@ -344,7 +344,7 @@
             <p>Status:</p>
             <!-- Rounded switch -->
             <label class="switch">
-              <input type="checkbox">
+              <input type="checkbox" onchange="microphone(this)"> 
               <div class="slider round"></div>
             </label></p>
           </div>
@@ -557,5 +557,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+    <script>
+    function microphone(element) {
+      if(element.checked) {
+        document.getElementById("demo").innerHTML = "Hello World"; 
+      }
+    }
+    </script>
   </body>
 </html>
