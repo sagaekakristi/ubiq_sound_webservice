@@ -18,3 +18,4 @@ Route::get('/cron/reset', 'MultideviceController@cron_reset');
 
 Route::get('/', 'MultideviceController@ui');
 Route::post('/configureUI', 'MultideviceController@configureUI');
+Route::get('/microphoneUI', 'MultideviceController@microphoneUI');

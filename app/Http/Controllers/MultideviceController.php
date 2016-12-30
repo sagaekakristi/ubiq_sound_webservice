@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Multidevice;
+use App\VolumeScale;
 
 class MultideviceController extends Controller
 {
@@ -319,5 +320,18 @@ class MultideviceController extends Controller
         exec('curl "localhost/index?fungsi=set_equalizer&id_device='.$id_device.'&jml_arg=3&arg1='.$new_bass.'&arg2='.$new_treble.'&arg3='.$new_echo.'"');
 
         return redirect()->action('MultideviceController@ui');
+    }
+
+    public function microphoneUI(Request $request) {
+            $new_scale = $request->input('scale');
+
+            for($i = 1; $i <= 7; $i++) {
+                $old_data = VolumeScale::where('id_device', '=', $i)
+                    ->first();
+                $old_data->value = $new_scale;
+                $old_data->save();
+            }
+
+            return redirect()->action('MultideviceController@ui');
     }
 }

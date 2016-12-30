@@ -72,7 +72,7 @@
       <div class="row">
         <div class="col-md-4">
           <div class="card card-block text-xs-center">
-            <h4 id="demo" class="card-title">Speaker1</h4>
+            <h4 class="card-title">Speaker1</h4>
             <p class="card-text">Volume: <?php echo $volume[0];?> | Status : <?php echo $mute[0];?><br>
             Bass: <?php echo $bass[0];?> | Treble: <?php echo $treble[0];?> | Echo: <?php echo $echo[0];?></p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm1">Configure</button>
@@ -560,7 +560,10 @@
     <script>
     function microphone(element) {
       if(element.checked) {
-        document.getElementById("demo").innerHTML = "Hello World"; 
+        window.location = "/microphoneUI?scale=0.5";
+      }
+      else {
+        window.location = "/microphoneUI?scale=1";
       }
     }
     </script>
