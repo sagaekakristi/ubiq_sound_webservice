@@ -212,6 +212,21 @@ class MultideviceController extends Controller
         }
     }
 
+    public function set_scale(Request $request) {
+        $new_scale = $request->input('scale');
+    	
+    	for($i = 1; $i <= 7; $i++) {
+	        $old_scale_data = VolumeScale::where('id_device', '=', $i)
+	            ->first();
+	        $old_scale_data->value = $new_scale;
+	        $old_scale_data->save();
+	}
+
+	return array(
+		'success' =>true,
+	);
+    }
+
     public function cron_on(Request $request)
     {
         $key = $request->input('key');
